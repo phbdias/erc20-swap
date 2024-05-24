@@ -1,6 +1,6 @@
 # Swap Ether to ERC20
 
-This project implements an [exercise](https://github.com/eigerco/recruitment-exercises/blob/main/erc20-swap.md) proposed by Eiger, whose purpose is to create a smart contract for swapping Ether to any designated ERC-20.
+This project implements an [exercise](https://github.com/eigerco/recruitment-exercises/blob/main/erc20-swap.md) proposed by Eiger, which leverages the creation of a smart contract for swapping Ether to any designated ERC-20.
 
 ## Solution
 The smart contract is developed in **Solidity** with the **Hardhat** environment. To perform the exchange, it leverages the method **exactInputSingle** from **Uniswap v3 SwapRouter**. Since the DEXs are constantly evolving and mutating, the **upgradeability** of the contract is important, and therefore the **UUPS proxy** pattern is employed. Also, there is the need to restrict access to some of the sensitive features of the contract, concerning the funds that are exchanged there. For that reason, it utilizes the **Ownable** pattern, which is a simple but very efficient form of access control.
